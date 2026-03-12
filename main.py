@@ -28,14 +28,19 @@ empleado2 = Obrero(nombre_obrero, datetime.now(), 200.0, sueldo_obrero, dias_tra
 print("------------------------------------------------------------------------------")
 print(f"Empleado: {empleado1.empleado}")
 print("Puesto: Ingeniero")
+# Verificar elegibilidad de bonos
+elegibilidad = empleado1.verificar_elegibilidad_bonos()
+print(f"Elegibilidad de Bonos: {elegibilidad['mensaje']}")
 print("sueldo Bruto:", (empleado1.dias_trabajados * empleado1.sueldo) + empleado1.bonos)
 print(f"Sueldo Neto: {empleado1.calcular_sueldo()}")
 print("fecha de emisión: ", empleado1.fecha_emision)
 
 print("------------------------------------------------------------------------------")
-2
 print(f"Empleado: {empleado2.empleado}")
 print("Puesto: Obrero")
+# Verificar elegibilidad de bonos
+elegibilidad2 = empleado2.verificar_elegibilidad_bonos()
+print(f"Elegibilidad de Bonos: {elegibilidad2['mensaje']}")
 print("sueldo Bruto:", (empleado2.dias_trabajados * empleado2.sueldo) + empleado2.bonos)
 print(f"Sueldo Neto: {empleado2.calcular_sueldo()}")
 print("fecha de emisión: ", empleado2.fecha_emision)
