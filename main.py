@@ -1,4 +1,3 @@
-from entidades import nomina
 from entidades.ingeniero import Ingeniero
 from entidades.obrero import Obrero
 from datetime import datetime
