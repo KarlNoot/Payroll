@@ -33,7 +33,11 @@ class Nomina:
             "elegible": es_elegible,
             "dias_trabajados": self.dias_trabajados,
             "dias_requeridos": 20,
+<<<<<<< HEAD
             "mensaje": f"{" Empleado SI puede recibir bonos" if es_elegible else " Empleado NO puede recibir bonos"} (Trabajó {self.dias_trabajados} días de 20 requeridos)"
+=======
+            "mensaje": f"{" Empleado SI puede recibir bonos" if es_elegible else " 0Empleado NO puede recibir bonos"} (Trabajó {self.dias_trabajados} días de 20 requeridos)"
+>>>>>>> d119de35595b009024644a0fce843d0ef02e57a7
         }
 
     def calcular_sueldo(self) -> float:
