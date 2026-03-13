@@ -12,7 +12,10 @@ try:
     print("Ingrese el sueldo diario del ingeniero:")
     sueldo_ingeniero = float(input())
 
-    empleado1 = Ingeniero(nombre_ingeniero, datetime.now(), 500.0, sueldo_ingeniero, dias_trabajados_ingeniero)
+    print("Ingrese el cedula del ingeniero:")
+    cedula_ingeniero = input()
+
+    empleado1 = Ingeniero(nombre_ingeniero, datetime.now(), 500.0, sueldo_ingeniero, dias_trabajados_ingeniero, cedula_ingeniero)
 
     print("Ingrese el nombre del obrero:")
     nombre_obrero = input()
@@ -23,11 +26,15 @@ try:
     print("Ingrese el sueldo diario del obrero:")
     sueldo_obrero = float(input())
 
-    empleado2 = Obrero(nombre_obrero, datetime.now(), 200.0, sueldo_obrero, dias_trabajados_obrero)
+    print("Ingrese la especialidad técnica del obrero:")
+    especialidad_tecnica = input()
+
+    empleado2 = Obrero(nombre_obrero, datetime.now(), 200.0, sueldo_obrero, dias_trabajados_obrero, especialidad_tecnica)
 
     print("------------------------------------------------------------------------------")
     print(f"Empleado: {empleado1.empleado}")
     print("Puesto: Ingeniero")
+    print(f"Cédula Profesional: {empleado1.cedula_profecional}")
     # Verificar elegibilidad de bonos
     elegibilidad = empleado1.verificar_elegibilidad_bonos()
     print(f"Elegibilidad de Bonos: {elegibilidad}")
@@ -38,6 +45,7 @@ try:
     print("------------------------------------------------------------------------------")
     print(f"Empleado: {empleado2.empleado}")
     print("Puesto: Obrero")
+    print(f"Especialidad Técnica: {empleado2.especialidad_tecnica}")
     # Verificar elegibilidad de bonos
     elegibilidad2 = empleado2.verificar_elegibilidad_bonos()
     print(f"Elegibilidad de Bonos: {elegibilidad2}")
