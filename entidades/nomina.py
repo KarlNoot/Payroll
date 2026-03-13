@@ -28,8 +28,8 @@ class Nomina:
 
     def verificar_elegibilidad_bonos(self) -> str:
         """Verifica si el empleado puede recibir bonos."""
-        es_elegible = self.puede_recibir_bonos()
-        if es_elegible:
+        elegibilidad = self.puede_recibir_bonos()
+        if elegibilidad:
             return f"Empleado SI puede recibir bonos (Trabajó {self.dias_trabajados} de 20)"
         else:
             return f"Empleado NO puede recibir bonos (Trabajó {self.dias_trabajados} de 20)"

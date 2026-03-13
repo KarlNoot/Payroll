@@ -2,6 +2,7 @@ from entidades.ingeniero import Ingeniero
 from entidades.obrero import Obrero
 from datetime import datetime
 try:
+    print("Bienvenido al sistema de nómina de maquilas")
     # Crear instancias de Ingeniero y Obrero solicitando sueldo diario y días trabajados
     print("Ingrese el nombre del ingeniero:")
     nombre_ingeniero = input()
@@ -14,8 +15,10 @@ try:
 
     print("Ingrese el cedula del ingeniero:")
     cedula_ingeniero = input()
+    print("Ingrese la cantidad de dinero que desea otorgar como bono por puntualidad para todos los ingenieros, que trabajan en la empresa:")
+    bono_ingeniero = float(input())
 
-    empleado1 = Ingeniero(nombre_ingeniero, datetime.now(), 500.0, sueldo_ingeniero, dias_trabajados_ingeniero, cedula_ingeniero)
+    empleado1 = Ingeniero(nombre_ingeniero, datetime.now(), bono_ingeniero, sueldo_ingeniero, dias_trabajados_ingeniero, cedula_ingeniero)
 
     print("Ingrese el nombre del obrero:")
     nombre_obrero = input()
@@ -29,7 +32,10 @@ try:
     print("Ingrese la especialidad técnica del obrero:")
     especialidad_tecnica = input()
 
-    empleado2 = Obrero(nombre_obrero, datetime.now(), 200.0, sueldo_obrero, dias_trabajados_obrero, especialidad_tecnica)
+    print("Ingrese la cantidad de dinero que desea otorgar como bono por puntualidad para todos los obreros, que trabajan en la empresa:")
+    bono_obrero = float(input())
+
+    empleado2 = Obrero(nombre_obrero, datetime.now(), bono_obrero, sueldo_obrero, dias_trabajados_obrero, especialidad_tecnica)
 
     print("------------------------------------------------------------------------------")
     print(f"Empleado: {empleado1.empleado}")
