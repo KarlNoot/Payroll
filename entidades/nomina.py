@@ -17,6 +17,25 @@ class Nomina:
         impuesto = sueldo_bruto * tasa
         return sueldo_bruto - impuesto
 
+    def puede_recibir_bonos(self) -> bool:
+        """Verifica si el empleado puede recibir bonos.
+        Condiciones: 
+        - Mínimo de 20 días trabajados
+        - No puede tener ninguna falta injustificada
+        """
+        dias_minimos = 20
+        return self.dias_trabajados >= dias_minimos
+
+    def verificar_elegibilidad_bonos(self) -> dict:
+        """Retorna un diccionario con la elegibilidad de bonos y detalles."""
+        es_elegible = self.puede_recibir_bonos()
+        return {
+            "elegible": es_elegible,
+            "dias_trabajados": self.dias_trabajados,
+            "dias_requeridos": 20,
+            "mensaje": f"{" Empleado SI puede recibir bonos" if es_elegible else " Empleado NO puede recibir bonos"} (Trabajó {self.dias_trabajados} días de 20 requeridos)"
+        }
+
     def calcular_sueldo(self) -> float:
         """Calcula el sueldo neto: aplica impuestos al sueldo bruto y luego suma el bono de puntualidad."""
         sueldo_bruto = (self.dias_trabajados * self.sueldo) + self.bonos
