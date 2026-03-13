@@ -26,19 +26,13 @@ class Nomina:
         dias_minimos = 20
         return self.dias_trabajados >= dias_minimos
 
-    def verificar_elegibilidad_bonos(self) -> dict:
-        """Retorna un diccionario con la elegibilidad de bonos y detalles."""
+    def verificar_elegibilidad_bonos(self) -> str:
+        """Verifica si el empleado puede recibir bonos."""
         es_elegible = self.puede_recibir_bonos()
-        return {
-            "elegible": es_elegible,
-            "dias_trabajados": self.dias_trabajados,
-            "dias_requeridos": 20,
-<<<<<<< HEAD
-            "mensaje": f"{" Empleado SI puede recibir bonos" if es_elegible else " Empleado NO puede recibir bonos"} (Trabajó {self.dias_trabajados} días de 20 requeridos)"
-=======
-            "mensaje": f"{" Empleado SI puede recibir bonos" if es_elegible else " 0Empleado NO puede recibir bonos"} (Trabajó {self.dias_trabajados} días de 20 requeridos)"
->>>>>>> d119de35595b009024644a0fce843d0ef02e57a7
-        }
+        if es_elegible:
+            return f"Empleado SI puede recibir bonos (Trabajó {self.dias_trabajados} de 20)"
+        else:
+            return f"Empleado NO puede recibir bonos (Trabajó {self.dias_trabajados} de 20)"
 
     def calcular_sueldo(self) -> float:
         """Calcula el sueldo neto: aplica impuestos al sueldo bruto y luego suma el bono de puntualidad."""
